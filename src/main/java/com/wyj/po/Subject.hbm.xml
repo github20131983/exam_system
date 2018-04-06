@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+
+ <hibernate-mapping>  
+  <class name="com.wyj.po.Subject" table="tb_subject">  
+    <id name="subjectID">  
+     <generator class="assigned"></generator>  
+    </id>  
+
+    <property name="subjectAnswer"></property>
+    <property name="subjectOptionA"></property>
+    <property name="subjectOptionB"></property>
+    <property name="subjectOptionC"></property>
+    <property name="subjectOptionD"></property>
+    <property name="subjectParse"></property>
+    <property name="subjectTitle"></property>   
+  </class>  
+
+ </hibernate-mapping>
