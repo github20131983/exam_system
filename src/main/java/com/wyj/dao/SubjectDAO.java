@@ -4,4 +4,5 @@ import com.wyj.po.Subject;
 
 public interface SubjectDAO {
 	public Subject findSubjectByTitle (String subjectTitle);//根据题目找题
+	public void addSubject(Subject subject);//添加题目
 }

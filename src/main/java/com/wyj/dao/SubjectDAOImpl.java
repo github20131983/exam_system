@@ -2,8 +2,9 @@ package com.wyj.dao;
 
 import java.util.List;
 
-import org.hibernate.Query;
+import org.hibernate.query.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.wyj.hibernate.HibernateSessionFactory;
 import com.wyj.po.Subject;
@@ -13,11 +14,25 @@ public class SubjectDAOImpl implements SubjectDAO{
 		Session session=HibernateSessionFactory.getSession();
 		Query<Subject> query=session.createQuery("from Subject as sub where sub.subjectTitle=?");
 		query.setString(0,subjectTitle);
-		List<Subject> list=query.list();
+		List<Subject> list=query.getResultList();
 		HibernateSessionFactory.closeSession();
 		if(list.size()==0)
 			return null;
 		else
 			return list.get(0);
 	}
+	public void addSubject(Subject subject){
+		Session session=HibernateSessionFactory.getSession();
+		Transaction transaction=null;
+		try {
+			transaction=session.beginTransaction();
+			session.save(subject);
+			transaction.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			transaction.rollback();
+		}
+		HibernateSessionFactory.closeSession();
+	}
+	
 }
