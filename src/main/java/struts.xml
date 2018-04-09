@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+ "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts><!-- 根节点 -->
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+    <package name="struts2" extends="struts-default">
+ 		<action name="subjectAdd" class="com.wyj.action.SubjectAddAction">
+ 			<result name="success" type="redirect">/teacher/subjectAdd.jsp</result><!--重定向到试题添加页面-->
+ 			<result name="input">/teacher/subjectAdd.jsp</result><!--请求转发到试题添加页面-->
+ 		</action>
+ 		
+ 	</package>	
+</struts>
