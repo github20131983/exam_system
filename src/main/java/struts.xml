@@ -6,9 +6,10 @@
 	<constant name="struts.i18n.encoding" value="utf-8"></constant>
     <package name="struts2" extends="struts-default">
  		<action name="subjectAdd" class="com.wyj.action.SubjectAddAction">
- 			<result name="success" type="redirect">/teacher/subjectAdd.jsp</result><!--重定向到试题添加页面-->
- 			<result name="input">/teacher/subjectAdd.jsp</result><!--请求转发到试题添加页面-->
- 		</action>
- 		
+<!--  			<result name="success" type="redirect">/teacher/subjectAdd.jsp</result>重定向到试题添加页面 -->
+<!--  			<result name="input">/teacher/subjectAdd.jsp</result>请求转发到试题添加页面 -->
+                <result name="success" type="redirect">/test/subjectAdd.jsp</result>
+			    <result name="input">/test/subjectAdd.jsp</result>
+ 		</action> 		
  	</package>	
 </struts>
