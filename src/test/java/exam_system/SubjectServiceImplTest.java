@@ -15,7 +15,7 @@ public class SubjectServiceImplTest {
 	}
 
 	@Test
-	public void testSaveSubject() {
+	/*public void testSaveSubject() {
 		Subject subject=new Subject();
 		subject.setSubjectID(1);
 		subject.setSubjectTitle("大熊猫是哪国的？");
@@ -27,6 +27,25 @@ public class SubjectServiceImplTest {
 		subject.setSubjectParse("大熊猫是中国的特有动物，送分题");
 		ssi.saveSubject(subject);
 		assertEquals(false,ssi.saveSubject(subject));
-	}
+	}*/
+	/*public void testShowParcularSubject() {
+		assertEquals(ssi.showParcularSubject(1).getSubjectAnswer(),"A");
+	}*/
 
+	/*public void testUpdateSubject() {
+		Subject subject=new Subject();
+		subject.setSubjectID(2);
+		subject.setSubjectTitle("5+1=?");
+		subject.setSubjectParse("简单题");
+		subject.setSubjectOptionA("4");
+		subject.setSubjectOptionB("5");
+		subject.setSubjectOptionC("6");
+		subject.setSubjectOptionD("7");
+		subject.setSubjectAnswer("C");
+		ssi.updateSubject(subject);	
+	}*/
+
+	public void testDeleteSubject() {
+		ssi.deleteSubject(3);
+	}
 }
