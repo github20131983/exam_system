@@ -1,5 +1,7 @@
 package com.wyj.dao;
 
+import java.util.List;
+
 import com.wyj.po.Subject;
 
 public interface SubjectDAO {
@@ -7,5 +9,6 @@ public interface SubjectDAO {
 	public void addSubject(Subject subject);//添加题目
 	public Subject findSubjectByID(int subjectID);//根据ID找题
 	public void updateSubject(Subject subject);//更新题库
-	public void deleteSubject(int subjectID);
+	public void deleteSubject(int subjectID);//删除题目
+	public  List<Subject> findAllSubject();	//查询所有题目
 }
