@@ -10,6 +10,12 @@
 <!--  			<result name="input">/teacher/subjectAdd.jsp</result>请求转发到试题添加页面 -->
                 <result name="success" type="redirect">/test/subjectAdd.jsp</result>
 			    <result name="input">/test/subjectAdd.jsp</result>
- 		</action> 		
+ 		</action> 
+ 		<action name="subjectParticular" class="com.wyj.action.SubjectParticularAction">
+                <result name="success">/test/subjectShow.jsp</result>
+ 		</action>
+ 		<action name="querySubject" class="com.wyj.action.QuerySubjectAction">
+                <result name="success">/test/subjectManage.jsp</result>
+ 		</action>			
  	</package>	
 </struts>
