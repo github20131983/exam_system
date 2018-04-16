@@ -2,14 +2,17 @@ package exam_system;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import com.wyj.po.Subject;
+import com.wyj.service.SubjectService;
 import com.wyj.service.SubjectServiceImpl;
 
 public class SubjectServiceImplTest {
-	SubjectServiceImpl ssi=new SubjectServiceImpl();
+	SubjectService ssi=new SubjectServiceImpl();
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -45,7 +48,12 @@ public class SubjectServiceImplTest {
 		ssi.updateSubject(subject);	
 	}*/
 
-	public void testDeleteSubject() {
+	/*public void testDeleteSubject() {
 		ssi.deleteSubject(3);
+	}*/
+	public void testfindAllSubject(){
+		List<Subject> list=ssi.findAllSubject();
+		for(Subject subject:list)
+			System.out.println(subject.getSubjectParse());
 	}
 }
