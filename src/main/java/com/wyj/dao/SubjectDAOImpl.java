@@ -72,5 +72,13 @@ public class SubjectDAOImpl implements SubjectDAO{
 		}
 		HibernateSessionFactory.closeSession();
 	}
+
+	public List<Subject> findAllSubject() {
+		Session session=HibernateSessionFactory.getSession();
+		Query<Subject> query=session.createQuery("from Subject");
+		List<Subject> list=query.getResultList();
+		HibernateSessionFactory.closeSession();
+		return list;
+	}
 	
 }
