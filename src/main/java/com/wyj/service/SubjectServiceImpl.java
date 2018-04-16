@@ -1,7 +1,14 @@
 package com.wyj.service;
 
+import java.util.List;
+
+import javax.management.Query;
+
+import org.hibernate.Session;
+
 import com.wyj.dao.SubjectDAO;
 import com.wyj.dao.SubjectDAOImpl;
+import com.wyj.hibernate.HibernateSessionFactory;
 import com.wyj.po.Subject;
 
 public class SubjectServiceImpl implements SubjectService{
@@ -27,5 +34,9 @@ public class SubjectServiceImpl implements SubjectService{
 
 	public void deleteSubject(int subjectID) {
 		subjectDAO.deleteSubject(subjectID);
+	}
+
+	public List<Subject> findAllSubject() {
+		return subjectDAO.findAllSubject();
 	}
 }
