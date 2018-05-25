@@ -16,6 +16,15 @@
  		</action>
  		<action name="querySubject" class="com.wyj.action.QuerySubjectAction">
                 <result name="success">/test/subjectManage.jsp</result>
- 		</action>			
+ 		</action>
+ 		<action name="subjectUpdateBefore" class="com.wyj.action.SubjectUpdateBefore">
+ 				<result name="success">/test/subjectUpdate.jsp</result><!--跳转到试题更新页面-->
+ 		</action>
+ 		<action name="subjectUpadate" class="com.wyj.action.SubjectUpdateAction">
+ 			<result name="success" type="redirect">querySubject</result><!--跳转到试题更新页面-->
+ 		</action>
+ 		<action name="subjectDelete" class="com.wyj.action.SubjectDeleteAction">
+ 		    <result name="success" type="redirect">querySubject</result><!--跳转到试题更新页面-->	
+ 		</action>		
  	</package>	
 </struts>
