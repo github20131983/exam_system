@@ -37,7 +37,7 @@
 		   <tr>
 			<td>答案:</td>
 			<td>
-				<input name="subjectAnswer" type="radio" value="A" checked>A
+				<input name="subjectAnswer" type="radio" value="A">A
 				<input name="subjectAnswer" type="radio" value="B">B
 				<input name="subjectAnswer" type="radio" value="C">C
 				<input name="subjectAnswer" type="radio" value="D">D

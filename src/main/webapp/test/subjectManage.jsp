@@ -21,7 +21,7 @@
 		  <s:iterator value="#request.subjects" var="subject">
 		  	  <tr>
 					<td><s:property value="#subject.subjectID"/></td>
-					<td><s:property value="#subject.subjectTitle"/></td>
+					<td><s:property value="#subject.subjectTitle" escape="false"/></td>
 					<td><s:property value="#subject.subjectAnswer"/></td>
 					<td><a href="subjectParticular.action?subjectID=<s:property value="#subject.subjectID"/>">查看</a></td>
 					<td><a href="subjectUpdateBefore.action?subjectID=<s:property value="#subject.subjectID"/>">更新</a></td>

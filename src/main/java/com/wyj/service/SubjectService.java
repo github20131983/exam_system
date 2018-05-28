@@ -10,4 +10,5 @@ public interface SubjectService {
 	public void updateSubject(Subject subject);//更新试题
 	public void deleteSubject(int subjectID);//删除试题
 	public List<Subject> findAllSubject();//查询所有试题
+	public List<Subject> likeQueryBySubjectTitle(String subjectTitle);//模糊查询所有试题
 }

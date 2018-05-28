@@ -10,5 +10,6 @@ public interface SubjectDAO {
 	public Subject findSubjectByID(int subjectID);//根据ID找题
 	public void updateSubject(Subject subject);//更新题库
 	public void deleteSubject(int subjectID);//删除题目
-	public  List<Subject> findAllSubject();	//查询所有题目
+	public List<Subject> findAllSubject();	//查询所有题目
+	public List<Subject> likeQueryByTitle(String subjectTitle);//模糊查询关键词
 }

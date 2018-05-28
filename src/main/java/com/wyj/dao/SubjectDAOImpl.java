@@ -80,5 +80,16 @@ public class SubjectDAOImpl implements SubjectDAO{
 		HibernateSessionFactory.closeSession();
 		return list;
 	}
-	
+
+	public List<Subject> likeQueryByTitle(String subjectTitle) {
+		Session session=HibernateSessionFactory.getSession();
+		Query query=session.createQuery("from Subject as sub where sub.subjectTitle like:title");
+		query.setString("title","%"+subjectTitle+"%");
+		List<Subject> list=query.getResultList();
+		HibernateSessionFactory.closeSession();
+		if(list.size()==0)
+			return null;
+		else
+			return list;
+	}
 }

@@ -39,4 +39,8 @@ public class SubjectServiceImpl implements SubjectService{
 	public List<Subject> findAllSubject() {
 		return subjectDAO.findAllSubject();
 	}
+
+	public List<Subject> likeQueryBySubjectTitle(String subjectTitle) {
+		return subjectDAO.likeQueryByTitle(subjectTitle);
+	}
 }
