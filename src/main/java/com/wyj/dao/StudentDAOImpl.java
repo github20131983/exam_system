@@ -34,8 +34,10 @@ public class StudentDAOImpl implements StudentDAO{
 	}
 
 	public Student findByStudentID(String studentID) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = HibernateSessionFactory.getSession();//获得Session对象
+		Student student = (Student) session.get(Student.class, studentID);
+		HibernateSessionFactory.closeSession();//关闭Session对象
+		return student;
 	}
 
 }

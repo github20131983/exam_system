@@ -34,6 +34,10 @@
  		</action>
  		<action name="QueryStudentByClass" class="com.wyj.action.QueryStudentByClass">
  		    <result name="success">/test/studentManage.jsp</result><!--跳转到试题更新页面-->	
- 		</action>		
+ 		</action>
+ 		<action name="studentLogin" class="com.wyj.action.LoginAction">
+ 		    <result name="success">/index.jsp</result><!--跳转到试题更新页面-->
+ 		    <result name="input">/test/login.jsp</result><!--跳转到试题更新页面-->		
+ 		</action>			
  	</package>	
 </struts>

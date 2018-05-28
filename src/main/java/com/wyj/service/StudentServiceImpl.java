@@ -16,4 +16,20 @@ public class StudentServiceImpl implements StudentService{
 	public List<Student> getStudentByClass(String sclass) {		
 		return studentDAO.findByStudentClass(sclass);
 	}
+
+	public boolean allowLogin(String studentID, String password) {
+		Student student=studentDAO.findByStudentID(studentID);
+		if(student==null)
+			return false;
+		else{
+			if(password.equals(student.getPassword()))
+				return true;
+			else 
+				return false;
+		}
+	}
+
+	public Student getStudentInfo(String studentID) {
+		return studentDAO.findByStudentID(studentID);
+	}
 }
