@@ -4,21 +4,22 @@
  "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts><!-- 根节点 -->
 	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.configuration.xml.reload" value="true" />
     <package name="struts2" extends="struts-default">
  		<action name="subjectAdd" class="com.wyj.action.SubjectAddAction">
 <!--  			<result name="success" type="redirect">/teacher/subjectAdd.jsp</result>重定向到试题添加页面 -->
 <!--  			<result name="input">/teacher/subjectAdd.jsp</result>请求转发到试题添加页面 -->
-                <result name="success" type="redirect">/test/subjectAdd.jsp</result>
-			    <result name="input">/test/subjectAdd.jsp</result>
+            <result name="success" type="redirect">/test/subjectAdd.jsp</result>
+			<result name="input">/test/subjectAdd.jsp</result>
  		</action> 
  		<action name="subjectParticular" class="com.wyj.action.SubjectParticularAction">
-                <result name="success">/test/subjectShow.jsp</result>
+            <result name="success">/test/subjectShow.jsp</result>
  		</action>
  		<action name="querySubject" class="com.wyj.action.QuerySubjectAction">
-                <result name="success">/test/subjectManage.jsp</result>
+            <result name="success">/test/subjectManage.jsp</result>
  		</action>
  		<action name="subjectUpdateBefore" class="com.wyj.action.SubjectUpdateBefore">
- 				<result name="success">/test/subjectUpdate.jsp</result><!--跳转到试题更新页面-->
+ 			<result name="success">/test/subjectUpdate.jsp</result><!--跳转到试题更新页面-->
  		</action>
  		<action name="subjectUpadate" class="com.wyj.action.SubjectUpdateAction">
  			<result name="success" type="redirect">querySubject</result><!--跳转到试题更新页面-->
@@ -36,8 +37,17 @@
  		    <result name="success">/test/studentManage.jsp</result><!--跳转到试题更新页面-->	
  		</action>
  		<action name="studentLogin" class="com.wyj.action.LoginAction">
- 		    <result name="success">/index.jsp</result><!--跳转到试题更新页面-->
- 		    <result name="input">/test/login.jsp</result><!--跳转到试题更新页面-->		
- 		</action>			
+ 		    <result type="chain">getRandomSubject</result><!--跳转到试题更新页面-->
+ 		    <result name="input">/test/StudentLogin.jsp</result><!--跳转到试题更新页面-->		
+ 		</action>
+ 		<action name="getRandomSubject" class="com.wyj.action.GetRandomSubject">
+ 		    <result name="success">/test/StudentIndex.jsp</result><!--跳转到试题更新页面-->
+ 		</action>
+ 		<action name="submitExam" class="com.wyj.action.SubmitExamAction">
+ 		    <result name="success">/test/examResult.jsp</result><!--跳转到试题更新页面-->
+ 		</action>
+ 		<action name="showSubjectAnswer" class="com.wyj.action.ShowSubjectAnswer">
+ 		    <result name="success">/test/showAnswer.jsp</result><!--跳转到试题更新页面-->
+ 		</action> 					
  	</package>	
 </struts>
