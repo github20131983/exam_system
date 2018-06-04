@@ -9,4 +9,5 @@ public interface StudentService {
 	public List<Student> getStudentByClass(String sclass);//按照班级查询成绩
 	public boolean allowLogin(String studentID,String password);//登录查询
 	public Student getStudentInfo(String studentID);//获得学生ID
+	public void setStudentResult(String studentID, int result);//给学生打分
 }

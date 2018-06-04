@@ -32,4 +32,11 @@ public class StudentServiceImpl implements StudentService{
 	public Student getStudentInfo(String studentID) {
 		return studentDAO.findByStudentID(studentID);
 	}
+
+	public void setStudentResult(String studentID, int result) {
+		Student student = studentDAO.findByStudentID(studentID);
+		student.setResult(result);
+		studentDAO.updateStudent(student);
+		
+	}
 }
