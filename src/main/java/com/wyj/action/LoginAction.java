@@ -10,29 +10,26 @@ import com.wyj.service.StudentServiceImpl;
 
 public class LoginAction extends ActionSupport{
    private String id;
-   private String password;
+   private String pass;
    private StudentService studentService=new StudentServiceImpl();
    public String getId() {
-	   System.out.println("aaaaaaa");
 	return id;
 	}
-	public void setId(String id) {
+	public void setId(String id) {	
 		this.id = id;
 	}
-	public String getPassword() {
-		return password;
+	public String getPass() {
+		return pass;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
-public String ececute() throws Exception{
-	System.out.println(id+" "+password);
-	   if(studentService.allowLogin(id, password)){
-		  //Student studentInfo=studentService.getStudentInfo(id);
-		  // Map session=ActionContext.getContext().getSession();
-		  // session.put("studentInfo", studentInfo);
-		  // System.out.println(id+" "+password);
-		   return SUCCESS;
+public String execute() throws Exception{
+	   if(studentService.allowLogin(id, pass)){	
+		  Student studentInfo=studentService.getStudentInfo(id);
+		  Map session=ActionContext.getContext().getSession();
+		  session.put("studentInfo", studentInfo);
+		  return this.SUCCESS;
 	   }
 	   else{
 		   addActionError("用户名或者密码不正确");
