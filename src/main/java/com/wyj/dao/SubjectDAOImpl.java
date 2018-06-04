@@ -92,4 +92,13 @@ public class SubjectDAOImpl implements SubjectDAO{
 		else
 			return list;
 	}
+
+	public List<Subject> randomFindSubject(int number) {
+		Session session = HibernateSessionFactory.getSession();
+		Query query = session.createQuery("from Subject as sub order by rand()");
+		query.setMaxResults(number); 
+		List list = query.list();					
+		HibernateSessionFactory.closeSession();
+		return list;
+	}
 }

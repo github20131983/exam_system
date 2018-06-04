@@ -12,4 +12,5 @@ public interface SubjectDAO {
 	public void deleteSubject(int subjectID);//删除题目
 	public List<Subject> findAllSubject();	//查询所有题目
 	public List<Subject> likeQueryByTitle(String subjectTitle);//模糊查询关键词
+	public List<Subject> randomFindSubject(int number);//随机查询一定数量的试题
 }

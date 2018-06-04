@@ -1,12 +1,9 @@
 package exam_system;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import com.wyj.dao.SubjectDAOImpl;
-import com.wyj.po.Subject;
 
 public class SubjectDAOImplTest {
     SubjectDAOImpl sd=new SubjectDAOImpl();
