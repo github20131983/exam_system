@@ -11,4 +11,7 @@ public interface SubjectService {
 	public void deleteSubject(int subjectID);//删除试题
 	public List<Subject> findAllSubject();//查询所有试题
 	public List<Subject> likeQueryBySubjectTitle(String subjectTitle);//模糊查询所有试题
+	public List<Subject> randomFindSubject(int num);//随机取出一定数目的试题
+	public int accountResult(List<Integer> subjectIDs, List<String> studentAnswers);
+	public Subject showSubjectParticular(Integer subjectID);
 }

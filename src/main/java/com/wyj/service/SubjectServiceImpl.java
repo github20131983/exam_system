@@ -43,4 +43,24 @@ public class SubjectServiceImpl implements SubjectService{
 	public List<Subject> likeQueryBySubjectTitle(String subjectTitle) {
 		return subjectDAO.likeQueryByTitle(subjectTitle);
 	}
+
+	public List<Subject> randomFindSubject(int num) {
+		return subjectDAO.randomFindSubject(num);
+	}
+
+	public int accountResult(List<Integer> subjectIDs, List<String> studentAnswers) {
+		int GeneralPoint = 0;//总分
+		for(int i = 0; i < subjectIDs.size(); i++) {
+			String rightAnswer = subjectDAO.
+				findSubjectByID(subjectIDs.get(i)).getSubjectAnswer();//得到正确答案，通过试题ID
+			if(rightAnswer.equals(studentAnswers.get(i))) {
+				GeneralPoint += 20;//加20分
+			}
+		}
+		return GeneralPoint;
+	}
+
+	public Subject showSubjectParticular(Integer subjectID) {
+		return subjectDAO.findSubjectByID(subjectID);
+	}
 }
